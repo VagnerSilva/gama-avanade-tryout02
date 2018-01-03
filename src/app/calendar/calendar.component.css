@@ -1,0 +1,36 @@
+
+.conteudo {
+  max-height: 100%;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+
+
+}
+
+.calendar {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  overflow: hidden;
+  margin-top: 80px;
+  border-radius: 10px;
+
+}
+
+
+@media (max-width: 600px ){
+  .calendar {
+    height: 100%;
+    width: 90%;
+    margin: 65px auto;
+    flex-direction: column;
+  }
+}
+

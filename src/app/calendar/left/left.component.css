@@ -1,0 +1,146 @@
+
+
+.ca-left {
+  width: 230px;
+  height: 350px;
+  color: #fff;
+  overflow: hidden;
+  background-color: #890a78;
+
+}
+
+h1 {
+  margin: 20px auto;
+}
+
+
+
+.current-day {
+  display: block;
+  font-size: 100px;
+  font-weight: bolder;
+  text-align: center;
+  letter-spacing: -2.2px;
+
+}
+
+
+.current-day-2 {
+  display: block;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  text-align: center;
+  letter-spacing: -0.4px;
+}
+
+.event {
+  margin: 20px 30px auto;
+  text-align: left;
+}
+.current-events h3 {
+  font-weight: bolder;
+  font-size: 12px;
+  letter-spacing: -0.3px;
+}
+
+
+.event-form {
+  margin-top: 70px;
+}
+
+#appointment-input {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  margin-right: 2px;
+  font-size: 12px;
+  font-style: italic;
+}
+
+
+#appointment-submit {
+  background-color: transparent !important;
+  border: solid 2px #fff;
+  border-radius: 5px;
+  color: #fff;
+}
+
+#appointment-input:focus, #appointment-submit:focus {
+
+  border-color: #fff;
+  outline: none;
+  box-shadow: none;
+
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #fff;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #fff;
+}
+
+
+@media (max-width: 600px ){
+  .calendar {
+    height: 100%;
+    width: 90%;
+    margin: 65px auto;
+    flex-direction: column;
+  }
+
+  .ca-left{
+    display: flex;
+    height: 170px;
+    width: 100%;
+    padding: 0;
+  }
+
+  .current, .event, h1 {
+
+    max-height: 90% !important;
+    margin: 0 auto;
+
+  }
+
+
+
+  .current-events {
+    margin-top: 20px;
+  }
+
+  #appointment-input {
+    border: 0;
+  }
+
+  .event-form {
+
+    border-bottom: solid 1px #fff;
+    padding-bottom: 5px;
+
+  }
+
+  #appointment-submit {
+
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+
+  }
+
+  .ca-right {
+
+    height: 350px;
+    background-color: #fff;
+
+  }
+}

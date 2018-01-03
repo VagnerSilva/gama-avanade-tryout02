@@ -6,11 +6,17 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppComponent } from './app.component';
 import { AppointmentsSeed }  from './appointments.seed';
+import { CalendarComponent } from './calendar/calendar.component';
+import { LeftComponent } from './calendar/left/left.component';
+import { RightComponent } from './calendar/right/right.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CalendarComponent,
+    LeftComponent,
+    RightComponent,
   ],
   imports: [
     BrowserModule,
