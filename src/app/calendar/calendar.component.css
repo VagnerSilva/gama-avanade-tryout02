@@ -19,7 +19,9 @@
   display: -webkit-flex;
   display: flex;
   overflow: hidden;
-  margin-top: 80px;
+  margin-top: 100px;
+  margin-left: 70px;
+  margin-right: 70px;
   border-radius: 10px;
 
 }

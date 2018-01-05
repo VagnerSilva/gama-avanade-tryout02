@@ -5,10 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppComponent } from './app.component';
-import { AppointmentsSeed }  from './appointments.seed';
+import { AppointmentsSeed } from './appointments.seed';
 import { CalendarComponent } from './calendar/calendar.component';
 import { LeftComponent } from './calendar/left/left.component';
 import { RightComponent } from './calendar/right/right.component';
+import { AppointmentsService } from './calendar/services/appointments.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BroadcastService } from './calendar/services/broadcast.service';
 
 
 @NgModule({
@@ -20,12 +23,13 @@ import { RightComponent } from './calendar/right/right.component';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       AppointmentsSeed, { dataEncapsulation: false }
     )
   ],
-  providers: [],
+  providers: [AppointmentsService, BroadcastService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,59 +2,36 @@
 
  <div class="ca-right">
    <div class="month-year">
-     <a class="fa fa-chevron-left"></a> December/17 <a class="fa fa-chevron-right"></a>
+     <a class="fa fa-chevron-left" (click)="prevMonth()"></a>
+        {{ _monthYear }}
+     <a class="fa fa-chevron-right" (click)="nextMonth()"></a>
    </div>
    <hr class="divLine">
 
-   <div>
+   <div class="calendar">
       <ul class="weekdays">
-          <li>SUN</li>
-          <li>MON</li>
-          <li>TUE</li>
-          <li>WED</li>
-          <li>THU</li>
-          <li>FRI</li>
-          <li>SAT</li>
+          <li *ngFor="let weekdays of weekdayName()">
+            {{ weekdays }}
+          </li>
       </ul>
 
-      <ul class="days">
-          <li>01</li>
-          <li>02</li>
-          <li>03</li>
-          <li>04</li>
-          <li>05</li>
-          <li>06</li>
-          <li>07</li>
-          <li>01</li>
-          <li>02</li>
-          <li>03</li>
-          <li>04</li>
-          <li>05</li>
-          <li>06</li>
-          <li>07</li>
-          <li>01</li>
-          <li>02</li>
-          <li>03</li>
-          <li>04</li>
-          <li>05</li>
-          <li>06</li>
-          <li>07</li>
-          <li>01</li>
-          <li>02</li>
-          <li>03</li>
-          <li>04</li>
-          <li>05</li>
-          <li>06</li>
-          <li>07</li>
-          <li>01</li>
-          <li>02</li>
-          <li>03</li>
-          <li>04</li>
-          <li>05</li>
-          <li>06</li>
-          <li>07</li>
-
-
+      <ul class="appointments__list" *ngFor="let days of _weeks">
+            <ng-container *ngFor="let day of days">
+              <li class=" ">
+                  <span class="calendar__day disabled" *ngIf="!isSelectedMonth(day.mDate)">
+                      <span>{{ day.mDate.date() | number: '2.' }}</span>
+                  </span>
+                  <span class="calendar__day" *ngIf="isSelectedMonth(day.mDate)">
+                    <span class=""
+                    (click)="selectDate(day)"
+                    [ngClass]="{ today: day.selectDate }"
+                    [class.has-event]="day.hasevent"
+                 >
+                      {{ day.mDate.date() | number: '2.' }}
+                    </span>
+                  </span>
+              </li>
+            </ng-container>
       </ul>
     </div>
  </div>

@@ -14,9 +14,8 @@
   font-weight: bold;
   text-align: right;
   letter-spacing: -0.3px;
-  color: rgb(229, 229, 229);
-  padding-right: 20px;
-
+  color: rgb(197, 197, 197);
+  padding-right: 40px;
 }
 
 
@@ -27,13 +26,13 @@ a {
   }
 
   .divLine {
-
     margin: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
     display: block;
     height: 1px;
     border: 0;
     border-top: 2px solid #000;
-
   }
 
   .weekdays {
@@ -44,41 +43,77 @@ a {
   }
 
 
-  .days {
-    font-size: 12px;
-    font-weight: normal;
-    letter-spacing: -0.3px;
-  }
 
-  .weekdays, .days {
+
+  .weekdays, .appointments__list {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0.4em;
     margin: 0;
-  }
-
-  .weekdays, .days {
     list-style-type: none;
+  }
 
+  .appointments__list {
+    padding: 4px;
+  }
 
+  .has-event::after {
+
+    background: #890a78;
+    content: " ";
+    height: 5px;
+    position: absolute;
+    width: 5px;
+    border-radius: 50%;
+    line-height:0;
   }
 
 
-
-  .weekdays li, .days li {
+  .weekdays li, .appointments__list li {
     text-align: center;
     display: block;
     width: 14.28%;
 
   }
 
-  .days li {
-    padding: 1.36em;
+  .appointments__list li {
+
+    margin: 5px auto;
+    padding: 2px;
+    cursor: hand;
+    cursor: pointer;
   }
 
+  .calendar {
+    margin: 0 40px;
+  }
 
+  .calendar__day {
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: -0.3px;
+  }
+
+  .disabled {
+    color: #e5e5e5;
+    cursor: none !important;
+  }
+
+  .disabled:after, .disabled:before, .days li:after {
+    cursor: none !important;
+  }
+
+  .today {
+    background-color: #890A78;
+    border-radius: 50%;
+    color: #fff;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+
+    z-index: 3;
+  }
 
 
 
@@ -90,6 +125,10 @@ a {
       height: 350px;
       background-color: #fff;
 
+    }
+
+    .today {
+      padding: 7px;
     }
   }
 

@@ -1,20 +1,36 @@
 
       <div class="ca-left">
           <div class="current">
-            <h1 class="current-day">20</h1>
-            <span class="current-day-2">wednesday</span>
+            <h1 class="current-day">{{ getDay() | date:'dd' }}</h1>
+            <span class="current-day-2">{{ getDay() | date:'EEEE' }}</span>
           </div>
             <div class="event">
               <div class="current-events">
                 <h3>Current Events</h3>
+                <div class="event-list">
                 <ul>
-                  <li>Eventos atual</li>
+                  <ng-container *ngFor="let event of getEvent()">
+                      <span class="" *ngIf="event.date === (getDay() | date: 'yyyy-MM-dd')">
+                    <li>
+                        <span class="date-text">{{ event.title }}</span>
+                    </li>
+                  </span>
+                   </ng-container>
                 </ul>
               </div>
+            </div>
+              <form class="event-form"
+                    (ngSubmit)="setEvent()"
+                    [formGroup]="event_form"
+                    novalidate
+                    >
+                <input  type="text"
+                        placeholder="Create on Event"
+                        id="appointment-input"
+                        formControlName="title"
+                        required>
+                <span> <button type="submit" id="appointment-submit">+</button> </span>
 
-              <form class="event-form">
-                <input  type="text" placeholder="Create on Event" id="appointment-input">
-                <span> <button id="appointment-submit">+</button> </span>
 
               </form>
           </div>
